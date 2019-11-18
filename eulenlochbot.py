@@ -21,7 +21,7 @@ custom_keyboard = [['/status'],
                        ['/wetter', '/foto']]
 reply_markup = ReplyKeyboardMarkup(custom_keyboard)
 
-url = 'http://http://eulenloch.de'
+url = 'http://eulenloch.de'
 
 
 def send_typing_action(func):
@@ -76,7 +76,6 @@ unknown_handler = MessageHandler(Filters.command, unknown)
 dispatcher.add_handler(unknown_handler)
 
 def get_lift_status():
-    url = "http://eulenloch.de"
     page = urlopen(url)
     soup = BeautifulSoup(page, "html.parser")
     status = soup.find("div", {"id": "links"})
